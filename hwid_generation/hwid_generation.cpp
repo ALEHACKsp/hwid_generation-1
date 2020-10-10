@@ -68,6 +68,7 @@ int main()
 
 	std::string hardware;
 	json json_hwid;
+
 	for (auto& header : meta.headers)
 	{
 		string_array_t strings;
@@ -126,12 +127,15 @@ int main()
 
 	std::string hwid;
 	std::string hwid_sha256;
+
 	hwid.append(json_hwid.dump());
+
 	std::string pattern = "null,";
 
 	remove_substrs(hwid, pattern);
 
 	picosha2::hash256_hex_string(hwid, hwid_sha256);
+
 	std::cout << hwid << std::endl;
 
 	std::cout << hwid_sha256 << std::endl;
