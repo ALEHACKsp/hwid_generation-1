@@ -29,7 +29,7 @@ std::string& trim(std::string& str, const std::string& chars = "\t\n\v\f\r ")
 	return ltrim(rtrim(str, chars), chars);
 }
 
-void remove_substrs(std::string& s, std::string& p)
+void remove_substrs(std::string& s, const std::string& p)
 {
 	const auto n = p.length();
 	for (auto i = s.find(p);
