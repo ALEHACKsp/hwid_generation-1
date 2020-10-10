@@ -81,8 +81,9 @@ int main()
 
 				if (x->length == 0)
 					break;
+
 				json_hwid["baseboard_info"][header->handle]["manufacturer_name"] = strings[x->manufacturer_name];
-				json_hwid["baseboard_info"][header->handle]["product_name"] = strings[x->product_name];
+				json_hwid["baseboard_info"][header->handle]["product_name"]      = strings[x->product_name];
 			}
 			break;
 
@@ -92,8 +93,9 @@ int main()
 
 				if (x->length == 0)
 					break;
-				json_hwid["bios_info"][header->handle]["vendor"] = strings[x->vendor];
-				json_hwid["bios_info"][header->handle]["version"] = strings[x->version];
+
+				json_hwid["bios_info"][header->handle]["vendor"]       = strings[x->vendor];
+				json_hwid["bios_info"][header->handle]["version"]      = strings[x->version];
 				json_hwid["bios_info"][header->handle]["release_date"] = strings[x->release_date];
 			}
 			break;
@@ -107,13 +109,11 @@ int main()
 					break;
 
 				json_hwid["processor_info"][header->handle]["socket_designation"] = strings[x->socket_designation];
-
-				json_hwid["processor_info"][header->handle]["manufacturer"] = strings[x->manufacturer];
-				json_hwid["processor_info"][header->handle]["version"] = strings[x->version];
-				json_hwid["processor_info"][header->handle]["id"] = std::to_string(static_cast<long>(x->id));
-
-				json_hwid["processor_info"][header->handle]["cores"] = std::to_string(static_cast<long>(x->cores));
-				json_hwid["processor_info"][header->handle]["threads"] = std::to_string(static_cast<long>(x->threads));
+				json_hwid["processor_info"][header->handle]["manufacturer"]       = strings[x->manufacturer];
+				json_hwid["processor_info"][header->handle]["version"]            = strings[x->version];
+				json_hwid["processor_info"][header->handle]["id"]                 = std::to_string(static_cast<long>(x->id));
+				json_hwid["processor_info"][header->handle]["cores"]              = std::to_string(static_cast<long>(x->cores));
+				json_hwid["processor_info"][header->handle]["threads"]            = std::to_string(static_cast<long>(x->threads));
 			}
 			break;
 
